@@ -59,5 +59,19 @@ namespace PracTest3
             listBoxOutput.Refresh();
             pictureBoxTop.Refresh();
         }
+
+        private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StreamReader reader;
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

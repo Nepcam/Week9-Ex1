@@ -118,6 +118,7 @@
             this.oepnFileToolStripMenuItem.Name = "oepnFileToolStripMenuItem";
             this.oepnFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oepnFileToolStripMenuItem.Text = "Oepn File...";
+            this.oepnFileToolStripMenuItem.Click += new System.EventHandler(this.oepnFileToolStripMenuItem_Click);
             // 
             // clearToolStripMenuItem
             // 
