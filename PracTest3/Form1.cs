@@ -12,8 +12,8 @@ namespace PracTest3
 {
     public partial class Form1 : Form
     {
-        //Name:
-        //ID  :
+        //Name: Cameron Nepe
+        //ID  : 1262199
 
         public Form1()
         {
