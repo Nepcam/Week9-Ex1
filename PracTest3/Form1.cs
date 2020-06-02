@@ -49,7 +49,15 @@ namespace PracTest3
             paper.DrawRectangle(Pens.Black, x, y, BAR_WIDTH, length);
         }
 
-        
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBoxOutput.Refresh();
+            pictureBoxTop.Refresh();
+        }
     }
 }
