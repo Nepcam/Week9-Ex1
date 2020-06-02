@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Printing;
 
 namespace PracTest3
 {
@@ -62,6 +63,7 @@ namespace PracTest3
 
         private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int num1, num2, num3, num4, num5, num6, num7, num8, num9;
             String objectType;
             const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
             StreamReader reader;
@@ -84,8 +86,25 @@ namespace PracTest3
 
                     //EXTRACT values into separate values
                     objectType = csvArray[0];
+                    Console.WriteLine(objectType);
+                    num1 = int.Parse(csvArray[1]);
+                    num2 = int.Parse(csvArray[2]);
+                    num3 = int.Parse(csvArray[3]);
+                    num4 = int.Parse(csvArray[4]);
+                    num5 = int.Parse(csvArray[5]);
+                    num6 = int.Parse(csvArray[6]);
+                    num7 = int.Parse(csvArray[7]);
+                    num8 = int.Parse(csvArray[8]);
+                    num9 = int.Parse(csvArray[9]);
+
+                    //DRAW the shape depending on the type of object
+                    //if (objectType == "Rectangle")
+                    //{
+                    //    Console.WriteLine(objectType);
+                    //}
                 }
-            }
+                reader.Close();
+            }            
         }
     }
 }
