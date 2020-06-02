@@ -62,15 +62,29 @@ namespace PracTest3
 
         private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            String objectType;
+            const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
             StreamReader reader;
-
-            try
+            string line;
+            string[] csvArray;
+            //SET the filter for the dialog control
+            openFileDialog1.Filter = FILTER;
+            //CHECK to see if the user has selected a file to open
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                //OPEN the selected file
+                reader = File.OpenText(openFileDialog1.FileName);
+                //REPEAT while it is not the end of the file
+                while (!reader.EndOfStream)
+                {
+                    //READ a whole csv line from the file
+                    line = reader.ReadLine();
+                    //SPLIT the values from the line using an array
+                    csvArray = line.Split(',');
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                    //EXTRACT values into separate values
+                    objectType = csvArray[0];
+                }
             }
         }
     }
