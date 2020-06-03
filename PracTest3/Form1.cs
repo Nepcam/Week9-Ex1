@@ -98,10 +98,10 @@ namespace PracTest3
                     num9 = int.Parse(csvArray[9]);
 
                     //DRAW the shape depending on the type of object
-                    //if (objectType == "Rectangle")
-                    //{
-                    //    Console.WriteLine(objectType);
-                    //}
+                    if (objectType == "Rectangle")
+                    {
+                        Console.WriteLine(objectType);
+                    }
                 }
                 reader.Close();
             }            
