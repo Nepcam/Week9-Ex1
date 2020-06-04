@@ -91,17 +91,20 @@ namespace PracTest3
                     num2 = int.Parse(csvArray[2]);
                     num3 = int.Parse(csvArray[3]);
                     num4 = int.Parse(csvArray[4]);
-                    num5 = int.Parse(csvArray[5]);
-                    num6 = int.Parse(csvArray[6]);
-                    num7 = int.Parse(csvArray[7]);
-                    num8 = int.Parse(csvArray[8]);
-                    num9 = int.Parse(csvArray[9]);
+                    //num5 = int.Parse(csvArray[5]);
+                    //num6 = int.Parse(csvArray[6]);
+                    //num7 = int.Parse(csvArray[7]);
+                    //num8 = int.Parse(csvArray[8]);
+                    //num9 = int.Parse(csvArray[9]);
+
+                    //DISPLAY the values into the listbox neatly padded out
+                    listBoxOutput.Items.Add(objectType.PadRight(10) + num1.ToString().PadRight(5) + num2.ToString().PadRight(5) + num3.ToString().PadRight(5) + num4.ToString());
 
                     //DRAW the shape depending on the type of object
-                    if (objectType == "Rectangle")
-                    {
-                        Console.WriteLine(objectType);
-                    }
+                    //if (objectType == "Rectangle")
+                    //{
+                    //    DrawABar(Graphics paper, int x, int y, BAR_WIDTH, Color.Aqua);
+                    //}
                 }
                 reader.Close();
             }            
