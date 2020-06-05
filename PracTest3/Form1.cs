@@ -63,18 +63,16 @@ namespace PracTest3
 
         private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //int num1, num2, num3, num4, num5, num6, num7, num8, num9;
             List<string> date = new List<string>();
             List<int> calories = new List<int>();
             List<int> steps = new List<int>();
-            List<decimal> dist = new List<decimal>();
+            List<double> dist = new List<double>();
             List<int> minInactive = new List<int>();
             List<int> minLightlyActive = new List<int>();
             List<int> minFairlyActive = new List<int>();
             List<int> minVeryActive = new List<int>();
             List<int> activityCalories = new List<int>();
 
-            String objectType;
             const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
             StreamReader reader;
             string line;
@@ -96,26 +94,21 @@ namespace PracTest3
                         line = reader.ReadLine();
                         //SPLIT the values from the line using an array
                         csvArray = line.Split(',');
-
                         //EXTRACT values into separate values
-                        objectType = csvArray[0];
-                        //Console.WriteLine(objectType);
-                        date.Add(csvArray[1]);
-                        calories.Add(int.Parse(csvArray[2]));
-                        //steps.Add(int.Parse(csvArray[3]));
-                        //dist.Add(decimal.Parse(csvArray[4]));
-                        //minInactive.Add(int.Parse(csvArray[5]));
-                        //minLightlyActive.Add(int.Parse(csvArray[6]));
-                        //minFairlyActive.Add(int.Parse(csvArray[7]));
-                        //minVeryActive.Add(int.Parse(csvArray[8]));
-                        //activityCalories.Add(int.Parse(csvArray[9]));
+                        date.Add(csvArray[0]);
+                        calories.Add(int.Parse(csvArray[1]));
+                        steps.Add(int.Parse(csvArray[2]));
+                        dist.Add(double.Parse(csvArray[3]));
+                        minInactive.Add(int.Parse(csvArray[4]));
+                        minLightlyActive.Add(int.Parse(csvArray[5]));
+                        minFairlyActive.Add(int.Parse(csvArray[6]));
+                        minVeryActive.Add(int.Parse(csvArray[7]));
+                        activityCalories.Add(int.Parse(csvArray[8]));
 
                         //DISPLAY the values into the listbox neatly padded out
-                        //listBoxOutput.Items.Add(objectType.PadRight(10) + date[count].ToString().PadRight(5) + calories[count].ToString().PadRight(5) 
-                        //    + steps[count].ToString().PadRight(5) + dist[count].ToString().PadRight(5) + minInactive[count].ToString().PadRight(5)
-                        //    + minLightlyActive[count].ToString().PadRight(5) + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString().PadRight(5));
-
-                        listBoxOutput.Items.Add(objectType.PadRight(10));
+                        listBoxOutput.Items.Add(date[count].PadRight(20) + calories[count].ToString().PadRight(10) + steps[count].ToString().PadRight(5) + dist[count].ToString().PadRight(5)
+                            + minInactive[count].ToString().PadRight(5) + minLightlyActive[count].ToString().PadRight(5) + minFairlyActive[count].ToString().PadRight(5)
+                            + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString().PadRight(5));
 
                         //DRAW the shape depending on the type of object
                         //if (objectType == "Rectangle")
