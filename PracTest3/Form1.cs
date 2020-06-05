@@ -63,7 +63,17 @@ namespace PracTest3
 
         private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int num1, num2, num3, num4, num5, num6, num7, num8, num9;
+            //int num1, num2, num3, num4, num5, num6, num7, num8, num9;
+            List<string> date = new List<string>();
+            List<int> calories = new List<int>();
+            List<int> steps = new List<int>();
+            List<decimal> dist = new List<decimal>();
+            List<int> minInactive = new List<int>();
+            List<int> minLightlyActive = new List<int>();
+            List<int> minFairlyActive = new List<int>();
+            List<int> minVeryActive = new List<int>();
+            List<int> activityCalories = new List<int>();
+
             String objectType;
             const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
             StreamReader reader;
@@ -77,6 +87,7 @@ namespace PracTest3
                 //OPEN the selected file
                 reader = File.OpenText(openFileDialog1.FileName);
                 //REPEAT while it is not the end of the file
+                int count = 0;
                 while (!reader.EndOfStream)
                 {
                     try
@@ -88,19 +99,23 @@ namespace PracTest3
 
                         //EXTRACT values into separate values
                         objectType = csvArray[0];
-                        Console.WriteLine(objectType);
-                        num1 = int.Parse(csvArray[1]);
-                        num2 = int.Parse(csvArray[2]);
-                        num3 = int.Parse(csvArray[3]);
-                        num4 = int.Parse(csvArray[4]);
-                        num5 = int.Parse(csvArray[5]);
-                        num6 = int.Parse(csvArray[6]);
-                        num7 = int.Parse(csvArray[7]);
-                        num8 = int.Parse(csvArray[8]);
-                        num9 = int.Parse(csvArray[9]);
+                        //Console.WriteLine(objectType);
+                        date.Add(csvArray[1]);
+                        calories.Add(int.Parse(csvArray[2]));
+                        //steps.Add(int.Parse(csvArray[3]));
+                        //dist.Add(decimal.Parse(csvArray[4]));
+                        //minInactive.Add(int.Parse(csvArray[5]));
+                        //minLightlyActive.Add(int.Parse(csvArray[6]));
+                        //minFairlyActive.Add(int.Parse(csvArray[7]));
+                        //minVeryActive.Add(int.Parse(csvArray[8]));
+                        //activityCalories.Add(int.Parse(csvArray[9]));
 
                         //DISPLAY the values into the listbox neatly padded out
-                        listBoxOutput.Items.Add(objectType.PadRight(10) + num1.ToString().PadRight(5) + num2.ToString().PadRight(5) + num3.ToString().PadRight(5) + num4.ToString());
+                        //listBoxOutput.Items.Add(objectType.PadRight(10) + date[count].ToString().PadRight(5) + calories[count].ToString().PadRight(5) 
+                        //    + steps[count].ToString().PadRight(5) + dist[count].ToString().PadRight(5) + minInactive[count].ToString().PadRight(5)
+                        //    + minLightlyActive[count].ToString().PadRight(5) + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString().PadRight(5));
+
+                        listBoxOutput.Items.Add(objectType.PadRight(10));
 
                         //DRAW the shape depending on the type of object
                         //if (objectType == "Rectangle")
@@ -113,12 +128,13 @@ namespace PracTest3
                         //    paper.DrawLine(myPen,
                         //    num1, num2, num3, num4)
                         //}
+                        count++;
                     }
                     catch //(Exception ex)
                     {
-                        Console.WriteLine("Error: " + line);
+                        Console.WriteLine("Error");
                     }
-
+                    
 
                 }
                 reader.Close();
