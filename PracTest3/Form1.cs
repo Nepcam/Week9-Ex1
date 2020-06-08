@@ -57,13 +57,19 @@ namespace PracTest3
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listBoxOutput.Refresh();
+            listBoxOutput.Items.Clear();
             pictureBoxTop.Refresh();
         }
 
         private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<string> date = new List<string>();
+           const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
+            StreamReader reader;
+            Graphics paper = pictureBoxTop.CreateGraphics();
+            Pen pen1 = new Pen(Color.Black, 2);
+            string line = "", objectType = "";
+            string[] csvArray;
+
             List<int> calories = new List<int>();
             List<int> steps = new List<int>();
             List<double> dist = new List<double>();
@@ -73,10 +79,6 @@ namespace PracTest3
             List<int> minVeryActive = new List<int>();
             List<int> activityCalories = new List<int>();
 
-            const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
-            StreamReader reader;
-            string line;
-            string[] csvArray;
             //SET the filter for the dialog control
             openFileDialog1.Filter = FILTER;
             //CHECK to see if the user has selected a file to open
@@ -94,8 +96,8 @@ namespace PracTest3
                         line = reader.ReadLine();
                         //SPLIT the values from the line using an array
                         csvArray = line.Split(',');
-                        //EXTRACT values into separate values
-                        date.Add(csvArray[0]);
+                        //EXTRACT values into separate variables
+                        objectType = csvArray[0];
                         calories.Add(int.Parse(csvArray[1]));
                         steps.Add(int.Parse(csvArray[2]));
                         dist.Add(double.Parse(csvArray[3]));
@@ -106,24 +108,20 @@ namespace PracTest3
                         activityCalories.Add(int.Parse(csvArray[8]));
 
                         //DISPLAY the values into the listbox neatly padded out
-                        listBoxOutput.Items.Add(date[count].PadRight(20) + calories[count].ToString().PadRight(10) + steps[count].ToString().PadRight(5) + dist[count].ToString().PadRight(5)
-                            + minInactive[count].ToString().PadRight(5) + minLightlyActive[count].ToString().PadRight(5) + minFairlyActive[count].ToString().PadRight(5)
-                            + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString().PadRight(5));
+                        listBoxOutput.Items.Add(objectType.PadRight(15) + calories[count].ToString().PadRight(10) + steps[count].ToString().PadRight(10) + dist[count].ToString().PadRight(10)
+                            + minInactive[count].ToString().PadRight(10) + minLightlyActive[count].ToString().PadRight(10) + minFairlyActive[count].ToString().PadRight(10)
+                            + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString());
 
                         //DRAW the shape depending on the type of object
                         //if (objectType == "Rectangle")
                         //{
-                        //    paper.DrawLine(myPen,
-                        //    num1, num2, num3, num4)
+                        //    DrawABar();
                         //}
-                        //else if (objectType == "Line")
-                        //{
-                        //    paper.DrawLine(myPen,
-                        //    num1, num2, num3, num4)
-                        //}
+
+                        //Add to the existing count of the list items
                         count++;
                     }
-                    catch //(Exception ex)
+                    catch
                     {
                         Console.WriteLine("Error");
                     }
@@ -134,7 +132,7 @@ namespace PracTest3
             }
             else
             {
-                MessageBox.Show("Error: ");
+                MessageBox.Show("Error:");
             }
         }
     }
