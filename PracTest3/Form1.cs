@@ -44,7 +44,7 @@ namespace PracTest3
         {
             //create a brush of specified colour and fill background with this colour 
             SolidBrush brush = new SolidBrush(colour);
-            paper.FillRectangle(brush, x, y,BAR_WIDTH, length);
+            paper.FillRectangle(brush, x, y, BAR_WIDTH, length);
 
             //draw outline in black
             paper.DrawRectangle(Pens.Black, x, y, BAR_WIDTH, length);
@@ -63,12 +63,13 @@ namespace PracTest3
 
         private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
+            const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
             StreamReader reader;
             Graphics paper = pictureBoxTop.CreateGraphics();
             Pen pen1 = new Pen(Color.Black, 2);
             string line = "", objectType = "";
             string[] csvArray;
+            int totalSteps = 0;
 
             List<int> calories = new List<int>();
             List<int> steps = new List<int>();
@@ -78,6 +79,11 @@ namespace PracTest3
             List<int> minFairlyActive = new List<int>();
             List<int> minVeryActive = new List<int>();
             List<int> activityCalories = new List<int>();
+
+            //int calories = 0;
+            //int steps = 0;
+            //int dist = 0;
+
 
             //SET the filter for the dialog control
             openFileDialog1.Filter = FILTER;
@@ -96,33 +102,42 @@ namespace PracTest3
                         line = reader.ReadLine();
                         //SPLIT the values from the line using an array
                         csvArray = line.Split(',');
-                        //EXTRACT values into separate variables
-                        objectType = csvArray[0];
-                        calories.Add(int.Parse(csvArray[1]));
-                        steps.Add(int.Parse(csvArray[2]));
-                        dist.Add(double.Parse(csvArray[3]));
-                        minInactive.Add(int.Parse(csvArray[4]));
-                        minLightlyActive.Add(int.Parse(csvArray[5]));
-                        minFairlyActive.Add(int.Parse(csvArray[6]));
-                        minVeryActive.Add(int.Parse(csvArray[7]));
-                        activityCalories.Add(int.Parse(csvArray[8]));
-
-                        //DISPLAY the values into the listbox neatly padded out
-                        listBoxOutput.Items.Add(objectType.PadRight(15) + calories[count].ToString().PadRight(10) + steps[count].ToString().PadRight(10) + dist[count].ToString().PadRight(10)
-                            + minInactive[count].ToString().PadRight(10) + minLightlyActive[count].ToString().PadRight(10) + minFairlyActive[count].ToString().PadRight(10)
-                            + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString());
-                 
-                        count++;
 
                         //CHECK for bad data in the file
+                        if (csvArray.Length == 9)
+                        {
+                            //EXTRACT values into separate variables
+                            objectType = csvArray[0];
+                            calories.Add(int.Parse(csvArray[1]));
+                            steps.Add(int.Parse(csvArray[2]));
+                            dist.Add(double.Parse(csvArray[3]));
+                            minInactive.Add(int.Parse(csvArray[4]));
+                            minLightlyActive.Add(int.Parse(csvArray[5]));
+                            minFairlyActive.Add(int.Parse(csvArray[6]));
+                            minVeryActive.Add(int.Parse(csvArray[7]));
+                            activityCalories.Add(int.Parse(csvArray[8]));
 
+                            //DISPLAY the values into the listbox neatly padded out
+                            listBoxOutput.Items.Add(objectType.PadRight(15) + calories[count].ToString().PadRight(10) + steps[count].ToString().PadRight(10) + dist[count].ToString().PadRight(10)
+                                + minInactive[count].ToString().PadRight(10) + minLightlyActive[count].ToString().PadRight(10) + minFairlyActive[count].ToString().PadRight(10)
+                                + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString());
+
+                            count++;
+
+                            //ADD up all the steps
+                            totalSteps = steps.Sum();
+                            Console.WriteLine(totalSteps);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("This data is incorrect " + line);
+                        }
                     }
                     catch
                     {
                         Console.WriteLine("Error");
                     }
-                    
-
                 }
                 reader.Close();
             }
