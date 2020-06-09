@@ -111,15 +111,11 @@ namespace PracTest3
                         listBoxOutput.Items.Add(objectType.PadRight(15) + calories[count].ToString().PadRight(10) + steps[count].ToString().PadRight(10) + dist[count].ToString().PadRight(10)
                             + minInactive[count].ToString().PadRight(10) + minLightlyActive[count].ToString().PadRight(10) + minFairlyActive[count].ToString().PadRight(10)
                             + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString());
-
-                        //DRAW the shape depending on the type of object
-                        //if (objectType == "Rectangle")
-                        //{
-                        //    DrawABar();
-                        //}
-
-                        //Add to the existing count of the list items
+                 
                         count++;
+
+                        //CHECK for bad data in the file
+
                     }
                     catch
                     {
