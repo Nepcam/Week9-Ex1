@@ -83,11 +83,6 @@ namespace PracTest3
             List<int> minVeryActive = new List<int>();
             List<int> activityCalories = new List<int>();
 
-            //int calories = 0;
-            //int steps = 0;
-            //int dist = 0;
-
-
             //SET the filter for the dialog control
             openFileDialog1.Filter = FILTER;
             //CHECK to see if the user has selected a file to open
@@ -136,7 +131,6 @@ namespace PracTest3
 
                             //ADD up all the steps
                             totalSteps = steps.Sum();
-                            Console.WriteLine(totalSteps);
                             
                         }
                         else
