@@ -123,9 +123,9 @@ namespace PracTest3
                             stepsPerMetre = CalculateStepsPerMetre(steps[count], dist[count]);
 
                             //DISPLAY the values into the listbox neatly padded out
-                            listBoxOutput.Items.Add(objectType.PadRight(15) + calories[count].ToString().PadRight(5) + steps[count].ToString().PadRight(5) + dist[count].ToString().PadRight(10)
-                                + minInactive[count].ToString().PadRight(10) + minLightlyActive[count].ToString().PadRight(10) + minFairlyActive[count].ToString().PadRight(10)
-                                + minVeryActive[count].ToString().PadRight(5) + activityCalories[count].ToString().PadRight(5) + stepsPerMetre.ToString("N3"));
+                            listBoxOutput.Items.Add(objectType.PadRight(15) + calories[count].ToString().PadRight(8) + steps[count].ToString().PadRight(8) + dist[count].ToString().PadRight(8)
+                                + minInactive[count].ToString().PadRight(8) + minLightlyActive[count].ToString().PadRight(8) + minFairlyActive[count].ToString().PadRight(8)
+                                + minVeryActive[count].ToString().PadRight(8) + activityCalories[count].ToString().PadRight(8) + stepsPerMetre.ToString("N3"));
 
                             //DRAW bar graph
                             y = pictureBoxTop.Height - (int)dist[count] * SCALE_FACTOR;
@@ -154,10 +154,16 @@ namespace PracTest3
             }
             else
             {
-                MessageBox.Show("Error:");
+                MessageBox.Show("Error: " + line);
             }
         }
 
+        /// <summary>
+        /// Calculates the number of steps for each Km 
+        /// </summary>
+        /// <param name="numSteps"></param>
+        /// <param name="distWalked"></param>
+        /// <returns></returns>
         private double CalculateStepsPerMetre(int numSteps, double distWalked)
         {
             double stepsPerMetre = numSteps / (distWalked * 1000);
