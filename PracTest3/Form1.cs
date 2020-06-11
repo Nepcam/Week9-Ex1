@@ -127,7 +127,7 @@ namespace PracTest3
                             //ADD up all the steps
                             totalSteps = steps.Sum();
                             Console.WriteLine(totalSteps);
-
+                            MessageBox.Show(totalSteps.ToString());
                         }
                         else
                         {
@@ -136,7 +136,7 @@ namespace PracTest3
                     }
                     catch
                     {
-                        Console.WriteLine("Error");
+                        Console.WriteLine("Error: " + line);
                     }
                 }
                 reader.Close();
