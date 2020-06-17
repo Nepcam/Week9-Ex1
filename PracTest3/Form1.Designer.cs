@@ -40,6 +40,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.graphDaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.oepnFileToolStripMenuItem,
+            this.graphDaysToolStripMenuItem,
             this.clearToolStripMenuItem,
             this.toolStripMenuItem2,
             this.exitToolStripMenuItem});
@@ -143,6 +145,12 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // graphDaysToolStripMenuItem
+            // 
+            this.graphDaysToolStripMenuItem.Name = "graphDaysToolStripMenuItem";
+            this.graphDaysToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.graphDaysToolStripMenuItem.Text = "Graph Days";
             // 
             // Form1
             // 
@@ -181,6 +189,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem graphDaysToolStripMenuItem;
     }
 }
 
