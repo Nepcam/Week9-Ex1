@@ -30,6 +30,15 @@ namespace PracTest3
         //the factor to scale the the graph by to make it fit nicely in the the picturebox
         const int SCALE_FACTOR = 15;
 
+        List<int> calories = new List<int>();
+        List<int> steps = new List<int>();
+        List<double> dist = new List<double>();
+        List<int> minInactive = new List<int>();
+        List<int> minLightlyActive = new List<int>();
+        List<int> minFairlyActive = new List<int>();
+        List<int> minVeryActive = new List<int>();
+        List<int> activityCalories = new List<int>();
+
         /// <summary>
         /// Draws a vertical bar that is part of a bar graph.
         /// i.e. It fills a rectangle at position (x,y) with the specified colour.
@@ -73,15 +82,6 @@ namespace PracTest3
             double stepsPerMetre = 0;
             int x = 0;
             int y = 0;
-
-            List<int> calories = new List<int>();
-            List<int> steps = new List<int>();
-            List<double> dist = new List<double>();
-            List<int> minInactive = new List<int>();
-            List<int> minLightlyActive = new List<int>();
-            List<int> minFairlyActive = new List<int>();
-            List<int> minVeryActive = new List<int>();
-            List<int> activityCalories = new List<int>();
 
             //SET the filter for the dialog control
             openFileDialog1.Filter = FILTER;
