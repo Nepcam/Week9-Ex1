@@ -36,11 +36,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.oepnFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.graphDaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.graphDaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -123,6 +123,13 @@
             this.oepnFileToolStripMenuItem.Text = "&Open File...";
             this.oepnFileToolStripMenuItem.Click += new System.EventHandler(this.oepnFileToolStripMenuItem_Click);
             // 
+            // graphDaysToolStripMenuItem
+            // 
+            this.graphDaysToolStripMenuItem.Name = "graphDaysToolStripMenuItem";
+            this.graphDaysToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.graphDaysToolStripMenuItem.Text = "Graph Days";
+            this.graphDaysToolStripMenuItem.Click += new System.EventHandler(this.graphDaysToolStripMenuItem_Click);
+            // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
@@ -145,12 +152,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // graphDaysToolStripMenuItem
-            // 
-            this.graphDaysToolStripMenuItem.Name = "graphDaysToolStripMenuItem";
-            this.graphDaysToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.graphDaysToolStripMenuItem.Text = "Graph Days";
             // 
             // Form1
             // 

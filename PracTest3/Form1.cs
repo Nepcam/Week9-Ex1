@@ -29,7 +29,7 @@ namespace PracTest3
 
         //the factor to scale the the graph by to make it fit nicely in the the picturebox
         const int SCALE_FACTOR = 15;
-
+        List<int> date = new List<int>();
         List<int> calories = new List<int>();
         List<int> steps = new List<int>();
         List<double> dist = new List<double>();
@@ -76,7 +76,7 @@ namespace PracTest3
             StreamReader reader;
             Graphics paper = pictureBoxTop.CreateGraphics();
             Pen pen1 = new Pen(Color.Black, 2);
-            string line = "", objectType = "";
+            string line = "", date = "";
             string[] csvArray;
             int totalSteps = 0;
             double stepsPerMetre = 0;
@@ -105,7 +105,7 @@ namespace PracTest3
                         if (csvArray.Length == 9)
                         {
                             //EXTRACT values into separate variables
-                            objectType = csvArray[0];
+                            date = csvArray[0];
                             calories.Add(int.Parse(csvArray[1]));
                             steps.Add(int.Parse(csvArray[2]));
                             dist.Add(double.Parse(csvArray[3]));
@@ -118,9 +118,11 @@ namespace PracTest3
                             stepsPerMetre = CalculateStepsPerMetre(steps[count], dist[count]);
 
                             //DISPLAY the values into the listbox neatly padded out
-                            listBoxOutput.Items.Add(objectType.PadRight(15) + calories[count].ToString().PadRight(8) + steps[count].ToString().PadRight(8) + dist[count].ToString().PadRight(8)
+                            listBoxOutput.Items.Add(date.PadRight(15) + calories[count].ToString().PadRight(8) + steps[count].ToString().PadRight(8) + dist[count].ToString().PadRight(8)
                                 + minInactive[count].ToString().PadRight(8) + minLightlyActive[count].ToString().PadRight(8) + minFairlyActive[count].ToString().PadRight(8)
                                 + minVeryActive[count].ToString().PadRight(8) + activityCalories[count].ToString().PadRight(8) + stepsPerMetre.ToString("N3"));
+
+                            //STORE all the information into the appropriate lists - lists are at class level
 
                             //DRAW bar graph
                             y = pictureBoxTop.Height - (int)dist[count] * SCALE_FACTOR;
@@ -162,6 +164,23 @@ namespace PracTest3
         {
             double stepsPerMetre = numSteps / (distWalked * 1000);
             return stepsPerMetre;
+        }
+
+        /// <summary>
+        /// This button click event groups data in days and the draws it into the picture box 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void graphDaysToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int day = 0;
+            int x = 0;
+            int y = 0;
+
+            for (int i = 0; i <= date[i]; i++)
+            {
+
+            }
         }
     }
 }
