@@ -178,51 +178,45 @@ namespace PracTest3
 
             Graphics paper = pictureBoxBottom.CreateGraphics();
 
+            //DRAW bar graph 
             for (int count = 0; count < dist.Count; count += 7)
             {
-                //DRAW bar graph
                 y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
                 DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Black);
                 x += BAR_WIDTH;
             }
             for (int count = 1; count < dist.Count; count += 7)
             {
-                //DRAW bar graph
                 y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
                 DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Red);
                 x += BAR_WIDTH;
             }
             for (int count = 2; count < dist.Count; count += 7)
             {
-                //DRAW bar graph
                 y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
                 DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Orange);
                 x += BAR_WIDTH;
             }
             for (int count = 3; count < dist.Count; count += 7)
             {
-                //DRAW bar graph
                 y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
                 DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Green);
                 x += BAR_WIDTH;
             }
             for (int count = 4; count < dist.Count; count += 7)
             {
-                //DRAW bar graph
                 y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
                 DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Purple);
                 x += BAR_WIDTH;
             }
             for (int count = 5; count < dist.Count; count += 7)
             {
-                //DRAW bar graph
                 y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
                 DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Blue);
                 x += BAR_WIDTH;
             }
             for (int count = 6; count < dist.Count; count += 7)
             {
-                //DRAW bar graph
                 y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
                 DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Brown);
                 x += BAR_WIDTH;
