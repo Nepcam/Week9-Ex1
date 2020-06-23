@@ -133,7 +133,7 @@ namespace PracTest3
 
                             //ADD up all the steps
                             totalSteps = steps.Sum();
-                            
+
                         }
                         else
                         {
@@ -173,13 +173,59 @@ namespace PracTest3
         /// <param name="e"></param>
         private void graphDaysToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int day = 0;
             int x = 0;
             int y = 0;
 
-            for (int i = 0; i <= date[i]; i++)
-            {
+            Graphics paper = pictureBoxBottom.CreateGraphics();
 
+            for (int count = 0; count < dist.Count; count += 7)
+            {
+                //DRAW bar graph
+                y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
+                DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Black);
+                x += BAR_WIDTH;
+            }
+            for (int count = 1; count < dist.Count; count += 7)
+            {
+                //DRAW bar graph
+                y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
+                DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Red);
+                x += BAR_WIDTH;
+            }
+            for (int count = 2; count < dist.Count; count += 7)
+            {
+                //DRAW bar graph
+                y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
+                DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Orange);
+                x += BAR_WIDTH;
+            }
+            for (int count = 3; count < dist.Count; count += 7)
+            {
+                //DRAW bar graph
+                y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
+                DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Green);
+                x += BAR_WIDTH;
+            }
+            for (int count = 4; count < dist.Count; count += 7)
+            {
+                //DRAW bar graph
+                y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
+                DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Purple);
+                x += BAR_WIDTH;
+            }
+            for (int count = 5; count < dist.Count; count += 7)
+            {
+                //DRAW bar graph
+                y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
+                DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Blue);
+                x += BAR_WIDTH;
+            }
+            for (int count = 6; count < dist.Count; count += 7)
+            {
+                //DRAW bar graph
+                y = pictureBoxBottom.Height - (int)dist[count] * SCALE_FACTOR;
+                DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Brown);
+                x += BAR_WIDTH;
             }
         }
     }

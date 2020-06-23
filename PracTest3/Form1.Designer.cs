@@ -30,7 +30,7 @@
         {
             this.listBoxOutput = new System.Windows.Forms.ListBox();
             this.pictureBoxTop = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBottom = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -42,7 +42,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBottom)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,14 +65,14 @@
             this.pictureBoxTop.TabIndex = 1;
             this.pictureBoxTop.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxBottom
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 420);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(712, 189);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxBottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxBottom.Location = new System.Drawing.Point(0, 420);
+            this.pictureBoxBottom.Name = "pictureBoxBottom";
+            this.pictureBoxBottom.Size = new System.Drawing.Size(712, 189);
+            this.pictureBoxBottom.TabIndex = 2;
+            this.pictureBoxBottom.TabStop = false;
             // 
             // label1
             // 
@@ -119,33 +119,33 @@
             // oepnFileToolStripMenuItem
             // 
             this.oepnFileToolStripMenuItem.Name = "oepnFileToolStripMenuItem";
-            this.oepnFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oepnFileToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.oepnFileToolStripMenuItem.Text = "&Open File...";
             this.oepnFileToolStripMenuItem.Click += new System.EventHandler(this.oepnFileToolStripMenuItem_Click);
             // 
             // graphDaysToolStripMenuItem
             // 
             this.graphDaysToolStripMenuItem.Name = "graphDaysToolStripMenuItem";
-            this.graphDaysToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.graphDaysToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.graphDaysToolStripMenuItem.Text = "Graph Days";
             this.graphDaysToolStripMenuItem.Click += new System.EventHandler(this.graphDaysToolStripMenuItem_Click);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.clearToolStripMenuItem.Text = "&Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(131, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -160,7 +160,7 @@
             this.ClientSize = new System.Drawing.Size(715, 612);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxBottom);
             this.Controls.Add(this.pictureBoxTop);
             this.Controls.Add(this.listBoxOutput);
             this.Controls.Add(this.menuStrip1);
@@ -168,7 +168,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COMP103 Practical Test 3 2014";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBottom)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -180,7 +180,7 @@
 
         private System.Windows.Forms.ListBox listBoxOutput;
         private System.Windows.Forms.PictureBox pictureBoxTop;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxBottom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip1;
