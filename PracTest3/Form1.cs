@@ -68,6 +68,7 @@ namespace PracTest3
         {
             listBoxOutput.Items.Clear();
             pictureBoxTop.Refresh();
+            pictureBoxBottom.Refresh();
         }
 
         private void oepnFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace PracTest3
             const string FILTER = "CSV Files|*.csv|ALL Files|*.*";
             StreamReader reader;
             Graphics paper = pictureBoxTop.CreateGraphics();
-            Pen pen1 = new Pen(Color.Black, 2);
+            Pen pen1 = new Pen(Color.Green, 2);
             string line = "", date = "";
             string[] csvArray;
             int totalSteps = 0;
@@ -126,7 +127,7 @@ namespace PracTest3
 
                             //DRAW bar graph
                             y = pictureBoxTop.Height - (int)dist[count] * SCALE_FACTOR;
-                            DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Black);
+                            DrawABar(paper, x, y, (int)dist[count] * SCALE_FACTOR, Color.Purple);
                             x += BAR_WIDTH;
 
                             count++;
